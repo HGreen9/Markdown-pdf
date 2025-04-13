@@ -1,4 +1,152 @@
 /* Your Styles */
+@import url("https://api.fontshare.com/v2/css?f[]=boska@300,301,400,401,700,701,900,901&display=swap");
+
+:root {
+  --peach-light:  #FADCD2; /* Lightest peach or background accent */
+  --peach-mid:    #F2B3A5; /* Mid-tone peach for highlights */
+  --peach-dark:   #DF8F7D; /* Deeper peach for emphasis */
+  --gray-light:   #D3D3D3; /* Light gray for subtle backgrounds */
+  --gray-mid:     #7F7F7F; /* Medium gray for text or borders */
+  --gray-dark:    #333333; /* Dark gray or near-black for text */
+  --black:        #000000; /* Full black */
+}
+
+body {
+   margin: 0.5in;
+   padding: 10px;
+   border: 5px double #333333;
+   border-radius: 12px;
+}
+
+html, body {
+  font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+  font-weight: normal;
+  color: var(--gray-dark); /* Dark gray text for better contrast */
+  line-height: 1.6;
+
+  background: linear-gradient(
+    to bottom right, 
+    var(--peach-mid) 20%, /* Mid-tone peach for a darker background */
+    var(--peach-dark) 80% /* Deeper peach for contrast */
+  );
+}
+
+article {
+  max-width: 800px;
+  margin: 3rem auto;
+  background: var(--gray-dark); /* Dark gray background for the article */
+  color: var(--black); /* Darker text for readability */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+  position: relative;
+
+  /* Add columns */
+  column-count: 2; /* Number of columns */
+  column-gap: 2rem; /* Space between columns */
+}
+
+article p, article ul, article ol {
+  break-inside: avoid; /* Prevent breaking lists or paragraphs across columns */
+  text-align: justify; /* Optional: Justify text for better alignment */
+  color: var(--black); /* Ensure paragraphs are dark enough */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Boska", serif;
+  margin-top: 0;
+  color: var(--black); /* Darker color for headings */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+section > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+}
+section > h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--peach-mid);
+  margin-top: 8px;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: var(--peach-dark);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+}
+ul li {
+  margin-bottom: 0.75rem;
+}
+ul ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section {
+  border-left: 4px solid var(--peach-mid);
+  padding-left: 1rem;
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  background: var(--peach-mid);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+article::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 120px;
+  height: 120px;
+  background: var(--peach-dark);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+a {
+  color: var(--peach-light); /* Light peach for links */
+  text-decoration: none;
+}
+a:hover {
+  color: var(--peach-mid); /* Mid-tone peach for hover effect */
+  text-decoration: underline;
+}
+
+.hr {
+  border: 1px dashed var(--gray-mid); /* Medium gray for horizontal rules */
+}
 
 
 /* Print Styling */
