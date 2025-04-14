@@ -1,67 +1,72 @@
-/* Your Styles */
 @import url("https://api.fontshare.com/v2/css?f[]=boska@300,301,400,401,700,701,900,901&display=swap");
 
 :root {
-  --peach-light:  #FADCD2; /* Lightest peach or background accent */
-  --peach-mid:    #F2B3A5; /* Mid-tone peach for highlights */
-  --peach-dark:   #DF8F7D; /* Deeper peach for emphasis */
-  --gray-light:   #D3D3D3; /* Light gray for subtle backgrounds */
-  --gray-mid:     #7F7F7F; /* Medium gray for text or borders */
-  --gray-dark:    #333333; /* Dark gray or near-black for text */
-  --black:        #000000; /* Full black */
+  --peach-light: #fadcd2; /* Lightest peach or background accent */
+  --peach-mid: #f2b3a5; /* Mid-tone peach for highlights */
+  --peach-dark: #b46351; /* Deeper peach for emphasis #df8f7d */
+  --gray-light: #d3d3d3; /* Light gray for subtle backgrounds */
+  --gray-mid: #7f7f7f; /* Medium gray for text or borders */
+  --gray-dark: #333333; /* Dark gray or near-black for text */
+  --black: #000000; /* Full black */
 }
 
 body {
-   margin: 0.5in;
-   padding: 10px;
-   border: 5px double #333333;
-   border-radius: 12px;
+  margin: 0.5in;
+  padding: 10px;
+  border: 5px double #333333;
+  border-radius: 12px;
 }
 
-html, body {
-  font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
-  font-weight: normal;
-  color: var(--gray-dark); /* Dark gray text for better contrast */
+html,
+body {
+  font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052,
+    serif;
+  font-weight: bold; /* Changed to bold for heavier font weight */
+  color: var(--gray-dark);
   line-height: 1.6;
+  background-color: #d9c1b0;
+}
 
-  background: linear-gradient(
-    to bottom right, 
-    var(--peach-mid) 20%, /* Mid-tone peach for a darker background */
-    var(--peach-dark) 80% /* Deeper peach for contrast */
-  );
+body, p, h1, h2, h3, h4, h5, h6, article {
+  hyphens: none; /* Disable hyphenation */
+  orphans: 3; /* Minimum number of lines at the bottom of a page */
+  widows: 3; /* Minimum number of lines at the top of a page */
 }
 
 article {
   max-width: 800px;
   margin: 3rem auto;
-  background: var(--gray-dark); /* Dark gray background for the article */
-  color: var(--black); /* Darker text for readability */
+  background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-
-  /* Add columns */
-  column-count: 2; /* Number of columns */
-  column-gap: 2rem; /* Space between columns */
 }
 
-article p, article ul, article ol {
-  break-inside: avoid; /* Prevent breaking lists or paragraphs across columns */
-  text-align: justify; /* Optional: Justify text for better alignment */
-  color: var(--black); /* Ensure paragraphs are dark enough */
+article p,
+article ul,
+article ol {
+  break-inside: avoid; 
+  text-align: right; 
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Boska", serif;
   margin-top: 0;
-  color: var(--black); /* Darker color for headings */
+  color: var(--gray-dark);
+  font-weight: 900; /* Set to a heavier weight */
 }
 
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   text-align: center;
+  font-weight: 900; /* Set to a heavier weight */
 }
 
 section > h2 {
@@ -69,6 +74,7 @@ section > h2 {
   margin-bottom: 0.75rem;
   position: relative;
   display: inline-block;
+  font-weight: 700; /* Set to a heavier weight */
 }
 section > h2::after {
   content: "";
@@ -84,7 +90,7 @@ p {
 }
 
 strong {
-  color: var(--peach-dark);
+  color: var(--gray-dark);
 }
 
 ul {
@@ -136,22 +142,86 @@ article::after {
 }
 
 a {
-  color: var(--peach-light); /* Light peach for links */
+  color: var(--peach-dark);
   text-decoration: none;
 }
 a:hover {
-  color: var(--peach-mid); /* Mid-tone peach for hover effect */
+  color: var(--peach-mid);
   text-decoration: underline;
 }
 
 .hr {
-  border: 1px dashed var(--gray-mid); /* Medium gray for horizontal rules */
+  border: 1px dashed #b46351;
 }
 
+.profile-image {
+  position: relative; /* Position relative to the container */
+  display: block; /* Ensures it behaves like a block element */
+  width: 100px; /* Set the desired size */
+  height: 100px; /* Match width for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fits within the circle */
+  border: 3px solid var(--peach-dark); /* Optional: Add a border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  z-index: 1; /* Ensures it appears above the h1 */
+}
 
-/* Print Styling */
 @media print {
+  body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
 
-    
+  article {
+    max-width: 100%;
+    margin: 0;
+    padding: 1in;
+    box-shadow: none;
+    border: none;
+    background: #fff;
+  }
 
+  header h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  section > h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .hr {
+    border: 1px solid #b46351;
+  }
+
+  article p,
+  article ul,
+  article ol {
+    break-inside: avoid;
+  }
+
+  html {
+    font-size: 12pt;
+  }
+
+  .profile-image {
+    display: block;
+    width: 80px; /* Adjust size for print */
+    height: 80px; /* Match width for a perfect circle */
+    border-radius: 50%; /* Keep the circular shape */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    border: 2px solid var(--gray-dark); /* Subtle border for print */
+  }
 }

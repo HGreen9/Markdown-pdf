@@ -1,3 +1,7 @@
+<div style="text-align: center;">
+  <img src="profile-placeholder.png" alt="Profile Image" class="profile-image">
+</div>
+
 # Jane Doe
 
 <hr class="hr">
